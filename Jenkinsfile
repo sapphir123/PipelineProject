@@ -16,7 +16,7 @@ pipeline {
         stage('Test1') { 
             steps {
                 script{
-                    echo "Hello, World!"
+                    bat 'echo "Hello, World!"'
                 }
                 echo("Test")
             }
