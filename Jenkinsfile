@@ -1,10 +1,15 @@
 import hudson.model.*;
-pipeline {
+pipeline 
+{
     agent any 
-    stages {
-        stage('Build') { 
-            steps {
-                script{
+    stages 
+    {
+        stage('Build') 
+        { 
+            steps 
+            {
+                script
+                {
                     json_path = "${env.WORKSPACE}/channel_config_1002.json"
                     content = readFile json_path
                     echo(content)
@@ -13,16 +18,30 @@ pipeline {
                 echo("Build")
             }
         }
-        stage('Test1') { 
-            steps {
-                script{
+        stage('Test1') 
+        { 
+            steps 
+            {
+                script
+                {
                     sh 'java -version'
                 }
                 echo("Test")
             }
         }
-        stage('Deploy') { 
-            steps {
+        stage('Deploy') 
+        { 
+            steps 
+            {
+                script
+                {
+                    timeout(0.5)
+                    {
+                        sh('java -version')
+                        sleep(31)
+                    }
+                    
+                }
                 echo("Deploy")
             }
         }
