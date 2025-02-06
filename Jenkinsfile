@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                println "Build"
+                echo("Build")
             }
         }
         stage('Test') { 
             steps {
-                println "Test" 
+                echo("Test")
             }
         }
         stage('Deploy') { 
             steps {
-                println "Deploy" 
+                echo("Deploy")
             }
         }
     }
