@@ -1,22 +1,30 @@
 import hudson.model.*;
-
-node("123") 
-{
-    stage('Build') 
-    { 
-        json_path = "${env.WORKSPACE}/channel_config_1002.json"
-        content = readFile json_path
-        echo(content)
-        echo("over")
-        echo("Build")
-    }
-    stage('Test1') 
-    { 
-        sh 'echo "Hello, World!"'
-        echo("Test")
-    }
-    stage('Deploy') 
-    { 
-        echo("Deploy")
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                script{
+                    json_path = "${env.WORKSPACE}/channel_config_1002.json"
+                    content = readFile json_path
+                    echo(content)
+                    echo("over")
+                }
+                echo("Build")
+            }
+        }
+        stage('Test1') { 
+            steps {
+                script{
+                    sh 'echo "Hello, World!"'
+                }
+                echo("Test")
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo("Deploy")
+            }
+        }
     }
 }
