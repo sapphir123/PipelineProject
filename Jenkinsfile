@@ -14,9 +14,7 @@ pipeline {
         }
         stage('Test1') { 
             steps {
-                script{
-                    sh 'java -version'
-                }
+                sh 'echo "Hello, World!"'
                 echo("Test")
             }
         }
