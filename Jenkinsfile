@@ -1,14 +1,13 @@
-pipeline {
-    agent any 
+import hudson.model.*;
+
+node("测试节点") {
     stages {
         stage('Build') { 
             steps {
-                script{
-                    json_path = "${env.WORKSPACE}/channel_config_1002.json"
-                    content = readFile json_path
-                    echo(content)
-                    echo("over")
-                }
+                json_path = "${env.WORKSPACE}/channel_config_1002.json"
+                content = readFile json_path
+                echo(content)
+                echo("over")
                 echo("Build")
             }
         }
