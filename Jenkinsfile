@@ -1,5 +1,3 @@
-@Library('anthony_share_lib') _
-
 pipeline {
     agent any 
     stages {
