@@ -35,7 +35,7 @@ pipeline
             {
                 script
                 {
-                    timeout(0.5)
+                    timeout(1)
                     {
                         sh('java -version')
                         //sleep(31)
