@@ -1,6 +1,7 @@
 import hudson.model.*;
 
-node("测试节点") {
+node("123") 
+{
     stage('Build') 
     { 
         json_path = "${env.WORKSPACE}/channel_config_1002.json"
