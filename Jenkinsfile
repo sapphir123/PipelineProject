@@ -15,8 +15,7 @@ pipeline {
         stage('测试') { 
             steps {
                 script{
-                    content = sh('java -version')
-                    echo(content)
+                    sh('java -version')
                 }
                 echo("Test")
             }
