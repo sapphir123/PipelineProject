@@ -12,7 +12,7 @@ pipeline {
                 echo("Build")
             }
         }
-        stage('测试') { 
+        stage('Test1') { 
             steps {
                 script{
                     sh('java -version')
