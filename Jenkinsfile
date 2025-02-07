@@ -13,9 +13,17 @@ pipeline
                     json_path = "${env.WORKSPACE}/channel_config_1002.json"
                     content = readFile json_path
                     echo(content)
-                    echo("over")
+                    echo("1over")
                 }
                 echo("Build")
+            }
+            steps
+            {
+                echo("步骤2")
+            }
+            steps
+            {
+                echo("步骤3")
             }
         }
         stage('Test1') 
@@ -40,7 +48,6 @@ pipeline
                         sh('java -version')
                         //sleep(31)
                     }
-                    
                 }
                 echo("Deploy")
             }
