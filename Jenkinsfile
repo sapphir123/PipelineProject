@@ -17,16 +17,8 @@ pipeline
                 }
                 echo("Build")
             }
-            steps
-            {
-                echo("步骤2")
-            }
-            steps
-            {
-                echo("步骤3")
-            }
         }
-        stage('Test1') 
+        stage('测试') 
         { 
             steps 
             {
